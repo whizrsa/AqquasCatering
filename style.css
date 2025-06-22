@@ -74,7 +74,6 @@ header .element-container .ct-nav a:hover::after {
 }
 
 /* Home Gallery Section */
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
