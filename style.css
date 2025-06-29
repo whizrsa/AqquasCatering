@@ -106,6 +106,110 @@ header .element-container .ct-nav a:hover::after {
 }
 
 
+/* hero section */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  animation: pulse 6s infinite;
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: #ffffff;
+  color: var(--color-secondary);
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--color-gray);
+  transform: scale(1.05);
+}
+
+/* footer section */
+.site-footer {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.site-footer .footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.site-footer .social-links {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.site-footer .social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.site-footer .social-links a:hover {
+  color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  opacity: 0.8;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
 @media (max-width: 768px) {
   header .element-container {
     flex-direction: column;
@@ -117,5 +221,18 @@ header .element-container .ct-nav a:hover::after {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.4rem;
   }
 }
