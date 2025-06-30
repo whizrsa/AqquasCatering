@@ -84,18 +84,67 @@ header .element-container .ct-nav a:hover::after {
 }
 
 .category-display {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-gray);
-  color: var(--color-text);
-  font-size: 1.2rem;
-  font-weight: 600;
+  background-color: var(--color-gray); /* fallback if no image */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 10px;
-  height: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  height: 220px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-display::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* dark overlay for readability */
+  transition: background 0.3s ease;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.category-display span {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.category-display:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.category-display:hover::before {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+.gallery .wed {
+  background: url(./images/aq2-removebg-preview.png) no-repeat center center;
+  background-position-x: 26%;
+  background-size: 160%; /* optional for scaling the image properly */
+}
+
+.gallery .corp {
+  background: url(./images/aq1-removebg-preview.png) no-repeat center center;
+  background-position-x: 44%;
+  background-size: 160%; /* optional for scaling the image properly */
+}
+
+.gallery .priv {
+  background: url(./images/aq3-removebg-preview.png) no-repeat center center;
+  background-position-x: 26%;
+  background-size: 160%; /* optional for scaling the image properly */
 }
 
 .category-display:hover {
